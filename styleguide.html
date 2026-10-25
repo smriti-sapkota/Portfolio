@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Style guide | Smriti Sapkota</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sg { max-width: 1100px; margin: 0 auto; padding: 48px var(--gutter) 96px; display: grid; gap: 40px; }
+        .sg h2 { font-family: var(--font-pixel); font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; color: var(--pink-deep); margin-bottom: 14px; }
+        .sg section { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-hard); }
+        .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+        .swatch { border: 2px solid var(--ink); border-radius: 14px; overflow: hidden; font-size: .85rem; }
+        .swatch div { height: 64px; }
+        .swatch p { padding: 6px 10px; }
+        .pairing { display: grid; gap: 6px; padding: 18px 0; border-top: 2px dashed var(--sky); }
+        .pairing:first-of-type { border-top: 0; }
+        .alt-fredoka .sticker-text { font-family: 'Fredoka', sans-serif; font-weight: 700; }
+        .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    </style>
+</head>
+<body>
+    <main class="sg">
+        <section>
+            <h2>Palette</h2>
+            <div class="swatches">
+                <div class="swatch"><div style="background:var(--sky)"></div><p>Sky #CFE3FF</p></div>
+                <div class="swatch"><div style="background:var(--gingham)"></div><p>Gingham #A9CBFA</p></div>
+                <div class="swatch"><div style="background:var(--blue-deep)"></div><p>Blue #3D7BE0</p></div>
+                <div class="swatch"><div style="background:var(--pink-soft)"></div><p>Pink soft #FFD3E8</p></div>
+                <div class="swatch"><div style="background:var(--ribbon)"></div><p>Ribbon #F470B0</p></div>
+                <div class="swatch"><div style="background:var(--pink-hot)"></div><p>Hot pink #E2458F</p></div>
+                <div class="swatch"><div style="background:var(--butter)"></div><p>Butter #FFF09A</p></div>
+                <div class="swatch"><div style="background:var(--mint)"></div><p>Mint #9FF0E4</p></div>
+                <div class="swatch"><div style="background:var(--cream)"></div><p>Cream #FFF8EC</p></div>
+                <div class="swatch"><div style="background:var(--ink)"></div><p>Ink #2A2352</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Display font options</h2>
+            <div class="pairing">
+                <p class="meta"><span>A · Lilita One (in use)</span></p>
+                <p class="section__title"><span class="sticker-text sticker-text--pink">Projects</span></p>
+            </div>
+            <div class="pairing alt-fredoka">
+                <p class="meta"><span>B · Fredoka Bold</span></p>
+                <p class="section__title"><span class="sticker-text sticker-text--pink">Projects</span></p>
+            </div>
+            <div class="pairing">
+                <p class="meta"><span>Body · Nunito</span><span>Headings · Fredoka</span><span>Labels · Pixelify Sans</span></p>
+                <p class="hero__title" style="font-size:2.2rem">Hi, I'm a <mark class="chip">highlight chip</mark></p>
+                <p>Body copy is set in Nunito for comfortable reading at small sizes.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Components</h2>
+            <div class="row">
+                <span class="pixel-bubble">pixel bubble</span>
+                <span class="pixel-bubble pixel-bubble--blue">blue bubble</span>
+                <a class="btn btn--pink" href="#">Primary button</a>
+                <a class="btn" href="#">Secondary</a>            </div>
+            <ul class="tags" style="margin-top:18px"><li>Tag</li><li>Another tag</li></ul>
+            <div class="row" style="margin-top:22px">
+                <div class="checker" style="width:140px;height:90px;border:2px solid var(--ink);border-radius:12px"></div>
+                <div class="gingham-pink" style="width:140px;height:90px;border:2px solid var(--ink);border-radius:12px"></div>
+                <div class="window__media" style="width:140px;height:90px;border:2px solid var(--ink);border-radius:12px"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

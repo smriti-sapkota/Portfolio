@@ -3,138 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Smriti Sapkota - Full-stack developer and BSC CSIT student. Portfolio showcasing CRUD applications, FastAPI projects, and WebSocket implementations.">
-    <meta name="keywords" content="web developer, full-stack development, ASP.NET Core, FastAPI, Python, portfolio">
+    <title>Smriti Sapkota | Frontend Developer Portfolio</title>
+    <meta name="description" content="Smriti Sapkota is a Computer Science student and Frontend Engineering Intern at TechNest Innovations, building responsive, accessible web interfaces with Next.js.">
+    <meta name="keywords" content="Smriti Sapkota, frontend developer, Next.js, React, web security, portfolio, Nepal">
     <meta name="author" content="Smriti Sapkota">
-    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" content="#CFE3FF">
+    <meta name="color-scheme" content="light">
+    <link rel="canonical" href="https://sapkotasmriti.com.np/">
     <meta property="og:title" content="Smriti Sapkota | Portfolio">
-    <meta property="og:description" content="Explore my portfolio of full-stack development projects and technical achievements.">
+    <meta property="og:description" content="Frontend engineering intern and CS student. Internship work, projects and a little bit of pink.">
     <meta property="og:type" content="website">
-    <title>Smriti Sapkota | Full-Stack Developer Portfolio</title>
-    <link rel="canonical" href="https://your-domain.com/">
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:url" content="https://sapkotasmriti.com.np/">
+    <meta property="og:image" content="https://sapkotasmriti.com.np/assets/img/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="fav.png" type="image/png">
+    <link rel="preload" href="assets/fonts/lilita-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Runs before first paint so the intro overlay covers the page without a flash
+        document.documentElement.classList.add('js');
+        try {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.classList.add('is-intro');
+            }
+        } catch (e) {}
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Smriti Sapkota",
-        "jobTitle": "Full-Stack Developer",
+        "jobTitle": "Frontend Engineering Intern",
+        "worksFor": { "@type": "Organization", "name": "TechNest Innovations Pvt. Ltd." },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Birendra Multiple Campus" },
         "email": "sapkotasmriti56@gmail.com",
-        "url": "https://your-domain.com/",
+        "url": "https://sapkotasmriti.com.np/",
+        "image": "https://sapkotasmriti.com.np/assets/img/smriti-800.jpg",
         "sameAs": [
             "https://github.com/smriti-sapkota",
             "https://www.linkedin.com/in/smriti-sapkota-6b278036a/",
             "https://www.instagram.com/sapkotasmriti56/"
         ],
-        "image": "image6 (1).jpeg",
-        "description": "BSC CSIT Student passionate about full-stack development and modern web technologies"
+        "description": "Computer Science student and frontend developer working with Next.js, exploring web security and AI-powered applications."
     }
     </script>
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation Sidebar -->
-        <aside class="sidebar">
-            <nav class="nav-buttons">
-                <button class="nav-btn active" data-section="about">
-                    <span>About Me</span>
-                </button>
-                <button class="nav-btn" data-section="projects">
-                    <span>Projects</span>
-                </button>
-                <button class="nav-btn" data-section="contact">
-                    <span>Contact Me</span>
-                </button>
-            </nav>
-        </aside>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- About Section -->
-            <section id="about" class="section active">
-                <div class="about-container">
-                    <div class="profile-image-wrapper">
-                        <img src="image6 (1).jpeg" alt="Smriti Sapkota - Full-stack developer and BSC CSIT student" class="profile-image" width="300" height="300">
-                    </div>
-                    <div class="about-text">
-                        <h1 class="greeting"><span  id = "name"class="greeting-text">Heyy, I'm <span class="name">Smriti</span>!</span></h1>
-                        <p class="subtitle">BSC CSIT Student</p>
-                        <p class="institution">Birendra Multiple Campus</p>
-                        <div class="bio-content">
-                            <p class="bio-text">Welcome to my portfolio! I'm a passionate Computer Science student with a strong interest in full-stack development and modern web technologies. I love creating efficient solutions and learning new technologies.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Decorative icon sprite (original drawings) -->
+    <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="i-heart" viewBox="0 0 9 8" shape-rendering="crispEdges">
+            <path fill="currentColor" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/>
+            <path fill="#fff" d="M1 1h1v1H1z"/>
+        </symbol>
+        <symbol id="i-sparkle" viewBox="0 0 7 7" shape-rendering="crispEdges">
+            <path fill="currentColor" d="M3 0h1v2H3zM2 2h3v1H2zM0 3h7v1H0zM2 4h3v1H2zM3 5h1v2H3z"/>
+        </symbol>
+        <symbol id="i-star" viewBox="0 0 100 100">
+            <path fill="currentColor" stroke="#2A2352" stroke-width="5" stroke-linejoin="round" d="M50 6 62 36 94 38 69 58 78 91 50 72 22 91 31 58 6 38 38 36Z"/>
+            <path fill="#fff" opacity=".7" d="M40 40c4-2 7-6 8-11 1 6 1 9-2 12-2 1-4 1-6-1Z"/>
+        </symbol>
+        <symbol id="i-bow" viewBox="0 0 120 100">
+            <g stroke="#2A2352" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+                <path fill="currentColor" d="M52 52 40 92 52 84 58 96 62 56Z"/>
+                <path fill="currentColor" d="M68 52 80 92 68 84 62 96 58 56Z"/>
+                <path fill="currentColor" d="M56 44C40 18 10 14 8 36s30 34 48 18Z"/>
+                <path fill="currentColor" d="M64 44c16-26 46-30 48-8S82 70 64 54Z"/>
+                <rect x="50" y="38" width="20" height="22" rx="8" fill="currentColor"/>
+            </g>
+            <path fill="#fff" opacity=".6" d="M22 30c6-6 14-6 22 0-8-1-15 0-22 6Z"/>
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+        </symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+        </symbol>
+    </svg>
 
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-icon" aria-label="CRUD Application">📱</div>
-                        <h3>CRUD Application</h3>
-                        <p class="tech-stack">ASP.NET Core | Entity Framework</p>
-                        <p class="project-description">A comprehensive CRUD application built with ASP.NET Core and Entity Framework, demonstrating database operations and API design patterns.</p>
-                        <a href="https://github.com/smriti-sapkota/ASP.NET-Core-CRUD-application" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-icon" aria-label="Social Media API">🌐</div>
-                        <h3>Social Media API</h3>
-                        <p class="tech-stack">FastAPI | Python</p>
-                        <p class="project-description">A modern social media API built with FastAPI. Features real-time capabilities with WebSocket support.</p>
-                        <a href="https://fastapi-5hsy.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Live →</a>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-icon" aria-label="WebSocket Integration">⚡</div>
-                        <h3>WebSocket Integration</h3>
-                        <p class="tech-stack">WebSocket | Real-time Communication</p>
-                        <p class="project-description">Real-time communication implementation using WebSocket technology for instant data synchronization.</p>
-                        <a href="https://github.com/smriti-sapkota/Websocket" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <h2>Get In Touch</h2>
-                <div class="contact-container">
-                    <p class="contact-intro">Feel free to reach out to me through any of these channels:</p>
-                    <div class="contact-links">
-                        <a href="https://github.com/smriti-sapkota" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub Profile">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            <span class="contact-text">GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/smriti-sapkota-6b278036a/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn Profile">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                            <span class="contact-text">LinkedIn</span>
-                        </a>
-                        <a href="mailto:sapkotasmriti56@gmail.com" class="contact-link" aria-label="Send Email">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                            </svg>
-                            <span class="contact-text">Email</span>
-                        </a>
-                        <a href="https://www.instagram.com/sapkotasmriti56/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Instagram Profile">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                            <span class="contact-text">Instagram</span>
-                        </a>
-                    </div>
-                    <div class="email-display">
-                        <p>Email: <strong>sapkotasmriti56@gmail.com</strong></p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <!-- Intro splash: shown only when JS runs and motion is allowed -->
+    <div class="intro" aria-hidden="true">
+        <div class="intro__word">smriti</div>
+        <div class="intro__fill"></div>
+        <button class="intro__skip" type="button" tabindex="-1">skip ›</button>
     </div>
 
-    <script src="script.js"></script>
+    <header class="site-header">
+        <a class="logo" href="#top" aria-label="Smriti Sapkota, back to top">
+            <span class="logo__mark">s</span>
+            <svg class="logo__bow" aria-hidden="true"><use href="#i-bow"/></svg>
+        </a>
+        <nav aria-label="Primary">
+            <ul class="nav">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="page">
+        <div class="ribbon" aria-hidden="true"></div>
+
+        <!-- Hero -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="decor" aria-hidden="true">
+                <svg class="deco deco--heart" style="--x:8%;--y:22%;--s:34px;--r:-12deg" data-speed="0.4"><use href="#i-heart"/></svg>
+                <svg class="deco deco--star" style="--x:86%;--y:18%;--s:54px;--r:14deg" data-speed="0.7"><use href="#i-star"/></svg>
+                <svg class="deco deco--sparkle" style="--x:16%;--y:70%;--s:30px" data-speed="0.9"><use href="#i-sparkle"/></svg>
+                <svg class="deco deco--sparkle deco--blue" style="--x:78%;--y:66%;--s:26px" data-speed="0.3"><use href="#i-sparkle"/></svg>
+                <svg class="deco deco--heart deco--blue" style="--x:92%;--y:44%;--s:26px;--r:10deg" data-speed="0.6"><use href="#i-heart"/></svg>
+                <svg class="deco deco--bow" style="--x:4%;--y:48%;--s:64px;--r:-18deg" data-speed="0.5"><use href="#i-bow"/></svg>
+            </div>
+
+            <div class="hero__inner">
+                <p class="pixel-bubble hero__hello">hello, world!</p>
+                <h1 class="hero__title" id="hero-title">
+                    <span class="line"><span class="line__inner">Hi, I'm <span class="sticker-text sticker-text--pink" data-split>Smriti</span></span></span>
+                    <span class="line"><span class="line__inner">a <mark class="chip chip--butter">Frontend Engineering Intern</mark></span></span>
+                    <span class="line"><span class="line__inner">at <mark class="chip chip--mint">TechNest Innovations</mark></span></span>
+                </h1>
+                <svg class="scribble" viewBox="0 0 420 40" aria-hidden="true" preserveAspectRatio="none">
+                    <path d="M6 26c40-14 80-16 120-6 18 5 10 14-4 10-10-3 6-14 30-16 60-6 140 4 200 0 20-1 40-4 60-8"/>
+                </svg>
+                <p class="hero__sub">I'm a Computer Science student who builds responsive, accessible web interfaces with Next.js, and I'm exploring web security and AI on the side.</p>
+                <div class="hero__cta">
+                    <a class="btn btn--pink" href="#work">See my work <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    <a class="btn" href="#contact">Say hi</a>
+                </div>
+            </div>
+
+            <ul class="stickers" aria-label="What I'm into">
+                <li class="sticker sticker--blue" style="--tilt:-6deg">
+                    <svg class="doodle" viewBox="0 0 120 80" aria-hidden="true">
+                        <rect x="8" y="8" width="104" height="64" rx="8"/>
+                        <path d="M8 22h104"/>
+                        <circle cx="18" cy="15" r="2.5"/><circle cx="27" cy="15" r="2.5"/><circle cx="36" cy="15" r="2.5"/>
+                        <path d="M44 38l-10 9 10 9M76 38l10 9-10 9M64 34l-8 26"/>
+                    </svg>
+                    <span>Building with Next.js</span>
+                </li>
+                <li class="sticker sticker--butter" style="--tilt:4deg">
+                    <svg class="doodle" viewBox="0 0 120 80" aria-hidden="true">
+                        <path d="M60 6l34 12v20c0 20-16 32-34 38-18-6-34-18-34-38V18Z"/>
+                        <path d="M46 40l10 10 20-20"/>
+                        <path d="M100 10l3 6 6 3-6 3-3 6-3-6-6-3 6-3Z"/>
+                    </svg>
+                    <span>Web security</span>
+                </li>
+                <li class="sticker sticker--pink" style="--tilt:-3deg">
+                    <svg class="doodle" viewBox="0 0 120 80" aria-hidden="true">
+                        <rect x="34" y="24" width="52" height="40" rx="12"/>
+                        <circle cx="50" cy="42" r="4"/><circle cx="70" cy="42" r="4"/>
+                        <path d="M52 54c5 4 11 4 16 0M60 24v-10"/>
+                        <path d="M60 4l3 5 5 3-5 3-3 5-3-5-5-3 5-3Z"/>
+                        <path d="M34 44h-8M86 44h8"/>
+                    </svg>
+                    <span>AI &amp; open source</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="work" aria-labelledby="work-title">
+            <div class="section__head">
+                <h2 class="section__title" id="work-title"><span class="sticker-text sticker-text--pink" data-split>Work</span></h2>
+                <p class="pixel-bubble pixel-bubble--blue">Aug 2026 – now</p>
+            </div>
+            <div class="role" data-reveal>
+                <p class="role__title">Frontend Engineering Intern</p>
+                <p class="role__org">TechNest Innovations Pvt. Ltd.</p>
+                <p class="role__text">I work on the frontend of client and company websites with Next.js as part of the TechNest team. These are team projects: below is what I work on, not whole apps I built alone.</p>
+            </div>
+
+            <div class="windows">
+                <article class="window window--blue" data-reveal>
+                    <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">chitwan-nova</span></div>
+                    <div class="window__media window__media--hospital" aria-hidden="true">
+                        <svg class="doodle doodle--big" viewBox="0 0 160 100">
+                            <rect x="40" y="26" width="80" height="62" rx="6"/>
+                            <path d="M40 46h80M70 88V68h20v20M80 32v10M75 37h10"/>
+                            <path d="M126 20c-4-6-12-2-8 4l8 8 8-8c4-6-4-10-8-4Z"/>
+                        </svg>
+                        <span class="window__note">screenshots coming soon</span>
+                    </div>
+                    <div class="window__body">
+                        <p class="meta"><span>Client project</span><span>Next.js</span><span>Ongoing</span></p>
+                        <h3>Chitwan Nova Hospital website</h3>
+                        <ul class="ticks">
+                            <li>Working on the frontend of the hospital's website in Next.js.</li>
+                            <li>Building UI and pages with a focus on a professional, responsive, easy-to-use site.</li>
+                        </ul>
+                        <p class="window__foot">Private repository</p>
+                    </div>
+                </article>
+
+                <article class="window window--pink" data-reveal>
+                    <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">technest.com</span></div>
+                    <div class="window__media window__media--company" aria-hidden="true">
+                        <svg class="doodle doodle--big" viewBox="0 0 160 100">
+                            <rect x="22" y="14" width="116" height="72" rx="8"/>
+                            <path d="M22 30h116M36 48h44M36 60h30M96 44h28v28H96z"/>
+                            <path d="M110 52l3 5 5 3-5 3-3 5-3-5-5-3 5-3Z"/>
+                        </svg>
+                    </div>
+                    <div class="window__body">
+                        <p class="meta"><span>Company website</span><span>Next.js</span><span>Ongoing</span></p>
+                        <h3>TechNest Innovations website</h3>
+                        <ul class="ticks">
+                            <li>Contributing to frontend implementation and UI development for the company's own site.</li>
+                            <li>Working on layouts, interactive elements, animations and responsive design.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="window window--butter" data-reveal>
+                    <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">nepali-khata</span></div>
+                    <div class="window__media window__media--khata" aria-hidden="true">
+                        <svg class="doodle doodle--big" viewBox="0 0 160 100">
+                            <path d="M40 18h70l10 10v58H40Z"/>
+                            <path d="M110 18v10h10M52 40h48M52 52h48M52 64h30"/>
+                            <path d="M118 66l14-14 6 6-14 14h-6Z"/>
+                        </svg>
+                    </div>
+                    <div class="window__body">
+                        <p class="meta"><span>Feature improvements</span><span>Existing app</span></p>
+                        <h3>Nepali Khata</h3>
+                        <ul class="ticks">
+                            <li>Improved existing features inside an established codebase.</li>
+                            <li>Refined the frontend to make the app easier to use.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="section__head">
+                <h2 class="section__title" id="projects-title"><span class="sticker-text sticker-text--blue" data-split>Projects</span></h2>
+                <p class="pixel-bubble">academic &amp; open source</p>
+            </div>
+
+            <article class="feature window window--blue" data-reveal>
+                <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">webguard</span></div>
+                <div class="feature__grid">
+                    <div class="feature__art checker" aria-hidden="true">
+                        <svg class="doodle doodle--big" viewBox="0 0 160 120">
+                            <path d="M80 10l40 14v24c0 26-18 40-40 48-22-8-40-22-40-48V24Z"/>
+                            <circle cx="76" cy="54" r="16"/>
+                            <path d="M88 66l14 14"/>
+                            <path d="M132 18l3 6 6 3-6 3-3 6-3-6-6-3 6-3ZM24 84l2 4 4 2-4 2-2 4-2-4-4-2 4-2Z"/>
+                        </svg>
+                    </div>
+                    <div class="window__body">
+                        <p class="meta"><span>Academic</span><span>Team project</span><span>7th semester</span></p>
+                        <h3>WebGuard</h3>
+                        <p>A web vulnerability scanner built as a team project for my seventh semester. I wrote the FastAPI backend that does the scanning:</p>
+                        <ul class="ticks">
+                            <li>A multi-threaded crawler that maps up to 50 same-domain pages per scan.</li>
+                            <li>Reflected XSS and SQL injection tests on forms and URL parameters, using error-based, boolean-blind and time-based checks.</li>
+                            <li>CSRF checks for missing form tokens and cookies without <code>SameSite</code>, plus missing <code>X-Frame-Options</code> and CSP headers.</li>
+                            <li>Optional logged-in scans, readable network-error messages, PostgreSQL storage with SQLModel and Alembic, Docker Compose, and an Azure App Service deploy workflow.</li>
+                        </ul>
+                        <p class="muted">My teammates built the React interface.</p>
+                        <ul class="tags" aria-label="Tech used">
+                            <li>Python</li><li>FastAPI</li><li>SQLModel</li><li>PostgreSQL</li><li>Docker</li>
+                        </ul>
+                        <a class="btn btn--small" href="https://github.com/smriti-sapkota/WebGuard" target="_blank" rel="noopener noreferrer">View on GitHub <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="feature window window--pink" data-reveal>
+                <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">sanket-ai</span></div>
+                <div class="feature__grid">
+                    <div class="feature__art gingham-pink" aria-hidden="true">
+                        <svg class="doodle doodle--big" viewBox="0 0 160 120">
+                            <rect x="44" y="34" width="72" height="56" rx="16"/>
+                            <circle cx="66" cy="60" r="6"/><circle cx="94" cy="60" r="6"/>
+                            <path d="M68 76c8 6 16 6 24 0M80 34V18"/>
+                            <path d="M80 4l4 7 7 4-7 4-4 7-4-7-7-4 7-4Z"/>
+                            <path d="M44 62H32M116 62h12"/>
+                        </svg>
+                    </div>
+                    <div class="window__body">
+                        <p class="meta"><span>Open source</span><span>Frogtoberfest 2026</span></p>
+                        <h3>Sanket AI</h3>
+                        <p>Sanket AI is an open-source AI business investigator for Nepalese SMEs. During Frogtoberfest I worked on the documentation and research side of the project.</p>
+                        <ul class="ticks">
+                            <li>My first time working with a community project and a shared codebase.</li>
+                            <li>Learned how an AI agent project is structured, with a FastAPI backend and a React frontend.</li>
+                        </ul>
+                        <a class="btn btn--small" href="https://github.com/sanket-business-ai/sanket-ai" target="_blank" rel="noopener noreferrer">See the project <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    </div>
+                </div>
+            </article>
+
+            <h3 class="mini-title" data-reveal>Earlier builds</h3>
+            <ul class="mini-grid">
+                <li class="mini" data-reveal style="--tilt:-2deg">
+                    <p class="meta"><span>ASP.NET Core</span><span>EF Core</span></p>
+                    <h4>CRUD application</h4>
+                    <p>Database operations and API design with Entity Framework.</p>
+                    <a href="https://github.com/smriti-sapkota/ASP.NET-Core-CRUD-application" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </li>
+                <li class="mini" data-reveal style="--tilt:1.5deg">
+                    <p class="meta"><span>FastAPI</span><span>Python</span></p>
+                    <h4>Social Media API</h4>
+                    <p>A social media API built with FastAPI.</p>
+                    <a href="https://fastapi-5hsy.onrender.com/" target="_blank" rel="noopener noreferrer">Live demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </li>
+                <li class="mini" data-reveal style="--tilt:-1deg">
+                    <p class="meta"><span>WebSocket</span><span>Real-time</span></p>
+                    <h4>WebSocket demo</h4>
+                    <p>Real-time messaging with WebSockets.</p>
+                    <a href="https://github.com/smriti-sapkota/Websocket" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about" aria-labelledby="about-title">
+            <div class="section__head">
+                <h2 class="section__title" id="about-title"><span class="sticker-text sticker-text--pink" data-split>About</span></h2>
+                <p class="pixel-bubble pixel-bubble--blue">nice to meet you</p>
+            </div>
+            <div class="about">
+                <figure class="polaroid" data-reveal>
+                    <span class="tape" aria-hidden="true"></span>
+                    <picture>
+                        <source type="image/avif" srcset="assets/img/smriti-400.avif 400w, assets/img/smriti-800.avif 800w, assets/img/smriti-1200.avif 1200w" sizes="(min-width: 900px) 340px, 70vw">
+                        <source type="image/webp" srcset="assets/img/smriti-400.webp 400w, assets/img/smriti-800.webp 800w, assets/img/smriti-1200.webp 1200w" sizes="(min-width: 900px) 340px, 70vw">
+                        <img src="assets/img/smriti-800.jpg" alt="Portrait of Smriti Sapkota" width="800" height="1000" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption>smriti ♡</figcaption>
+                </figure>
+                <div class="about__text">
+                    <p class="about__lead" data-reveal>I'm a BSc CSIT student at Birendra Multiple Campus and a frontend engineering intern at TechNest Innovations.</p>
+                    <p data-reveal>I enjoy building websites that are responsive, accessible and nice to look at. Day to day that means Next.js. Outside the internship I'm learning more about full-stack development, web security and AI-powered apps.</p>
+                    <div class="chips-block" data-reveal>
+                        <h3>Tools I've worked with</h3>
+                        <ul class="tags">
+                            <li>Next.js</li><li>React</li><li>JavaScript</li><li>HTML &amp; CSS</li><li>Python</li><li>FastAPI</li><li>ASP.NET Core</li><li>Git &amp; GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="chips-block" data-reveal>
+                        <h3>Currently exploring</h3>
+                        <ul class="tags tags--pink">
+                            <li>Web security</li><li>AI agents</li><li>Full-stack development</li><li>Web animation</li>
+                        </ul>
+                    </div>
+                    <p class="about__goal" data-reveal><strong>Next up:</strong> growing into a developer who ships polished, reliable, production-ready apps by learning from real teams and contributing more to open source.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact" aria-labelledby="contact-title">
+        <div class="footer__cards">
+            <div class="card card--big" data-reveal>
+                <h2 class="footer__title" id="contact-title"><span class="sticker-text sticker-text--pink" data-split>Let's say hi!</span></h2>
+                <p>Have a project, a question or an opportunity? My inbox is open.</p>
+                <div class="email-row">
+                    <a class="btn btn--pink" href="mailto:sapkotasmriti56@gmail.com">sapkotasmriti56@gmail.com</a>
+                    <button class="btn btn--small copy-btn" type="button" data-copy="sapkotasmriti56@gmail.com">Copy</button>
+                    <span class="copy-status" role="status" aria-live="polite"></span>
+                </div>
+            </div>
+            <nav class="card card--links" aria-label="Footer" data-reveal>
+                <div>
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Elsewhere</h3>
+                    <ul>
+                        <li><a href="https://github.com/smriti-sapkota" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/smriti-sapkota-6b278036a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/sapkotasmriti56/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="footer__bottom">
+            <ul class="socials">
+                <li><a class="social" href="https://github.com/smriti-sapkota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
+                <li><a class="social" href="https://www.linkedin.com/in/smriti-sapkota-6b278036a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                <li><a class="social" href="mailto:sapkotasmriti56@gmail.com" aria-label="Email"><svg aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+                <li><a class="social" href="https://www.instagram.com/sapkotasmriti56/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+            </ul>
+            <svg class="mascot" viewBox="0 0 120 100" aria-hidden="true">
+                <use href="#i-bow" class="mascot__bow"/>
+                <circle cx="56" cy="47" r="1.8" fill="#2A2352"/><circle cx="64" cy="47" r="1.8" fill="#2A2352"/>
+                <path d="M57.5 52.5q2.5 2 5 0" fill="none" stroke="#2A2352" stroke-width="1.4" stroke-linecap="round"/>
+                <ellipse cx="53" cy="51" rx="2" ry="1.2" fill="#FF6FA8" opacity=".7"/><ellipse cx="67" cy="51" rx="2" ry="1.2" fill="#FF6FA8" opacity=".7"/>
+            </svg>
+            <p class="footer__note">© 2026 Smriti Sapkota<br>coded with <svg class="tiny-heart" aria-label="love" role="img"><use href="#i-heart"/></svg> and a lot of pink</p>
+        </div>
+    </footer>
 </body>
 </html>
