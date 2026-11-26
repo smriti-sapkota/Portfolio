@@ -548,39 +548,26 @@ code {
     position: relative;
     display: grid;
     place-items: center;
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
     text-decoration: none;
 }
 
-.logo__mark {
-    display: grid;
-    place-items: center;
+.logo__avatar {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     border: var(--border);
-    background: var(--pink-hot);
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    line-height: 1;
-    padding-bottom: 3px;
+    background: var(--pink-soft);
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0 0 0 3px var(--pink);
+    transition: transform 0.4s var(--ease-back), box-shadow 0.4s var(--ease-back);
 }
 
-.logo__bow {
-    position: absolute;
-    width: 30px;
-    height: 25px;
-    top: -10px;
-    right: -12px;
-    color: var(--butter);
-    transform: rotate(18deg);
-    transition: transform 0.4s var(--ease-back);
-}
-
-.logo:hover .logo__bow {
-    transform: rotate(-8deg) scale(1.15);
+.logo:hover .logo__avatar {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 0 0 4px var(--pink-hot);
 }
 
 .nav {
@@ -612,83 +599,28 @@ code {
     position: relative;
 }
 
-.section,
-.hero {
-    position: relative;
-    z-index: 1;
-    max-width: var(--max);
-    margin: 0 auto;
-    padding-inline: var(--gutter);
-}
-
-.section {
-    padding-block: clamp(80px, 12vw, 160px);
-}
-
-.section__head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 8px 20px;
-    margin-bottom: clamp(28px, 4vw, 48px);
-}
-
-.section__title {
-    font-size: var(--fs-h2);
-    line-height: 0.9;
-}
-
-/* ---------- Ribbon ---------- */
-.ribbon {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.ribbon svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-}
-
-.ribbon path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.ribbon__edge { stroke: var(--pink-hot); }
-.ribbon__band { stroke: var(--ribbon); }
-.ribbon__sheen { stroke: #FFC2DF; opacity: 0.9; }
-.ribbon__bow { color: var(--ribbon); }
-
-/* ---------- Decor ---------- */
+/* Scattered decor (stars, flowers, bows) */
 .decor {
     position: absolute;
     inset: 0;
+    overflow: clip;
     pointer-events: none;
+    z-index: 0;
 }
 
 .deco {
     position: absolute;
     left: var(--x);
     top: var(--y);
-    width: var(--s);
-    height: var(--s);
+    width: var(--s, 28px);
+    height: auto;
     rotate: var(--r, 0deg);
-    color: var(--pink);
+    image-rendering: pixelated;
 }
 
-.deco--blue { color: var(--blue); }
-.deco--star { color: var(--butter); }
-.deco--bow { color: var(--pink); height: calc(var(--s) * 0.83); }
-
-/* ---------- Hero ---------- */
+.section,
 .hero {
+    position: relative;
     min-height: 100svh;
     display: flex;
     flex-direction: column;
@@ -837,6 +769,46 @@ code {
     display: grid;
     gap: clamp(24px, 3vw, 36px);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.windows--single {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+}
+
+/* ---------- Experience blocks ---------- */
+.experience-block {
+    margin-bottom: clamp(48px, 7vw, 80px);
+}
+
+.experience-block--hackathon .exp-header,
+.experience-block--tu .exp-header {
+    border-left: 4px solid var(--pink);
+    padding-left: 18px;
+}
+
+.experience-block--tu .exp-header {
+    border-left-color: var(--blue);
+}
+
+.exp-header {
+    max-width: 46rem;
+    margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.exp-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.exp-date {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    font-size: 0.8rem;
 }
 
 /* ---------- Projects ---------- */
@@ -1010,6 +982,23 @@ code {
     font-weight: 600;
     font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.7rem);
     line-height: 1.35;
+}
+
+/* Quick facts row in About */
+.about__quickfacts {
+    display: grid;
+    gap: 10px;
+    padding: 14px 16px;
+    background: var(--sky);
+    border-radius: 14px;
+    border: 2px solid var(--ink);
+}
+
+.quickfact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.98rem;
 }
 
 .chips-block h3 {
@@ -1300,9 +1289,6 @@ html.lenis body {
         animation-delay: -2s;
     }
 
-    .deco--sparkle {
-        animation: twinkle 2.4s steps(4) infinite;
-    }
 
     .mascot {
         animation: wiggle 3s ease-in-out infinite;
@@ -1333,6 +1319,19 @@ html.lenis body {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+
+/* ---------- Pointer sparkles ---------- */
+.trail {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 90;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    color: var(--pink-hot);
+    opacity: 0;
 }
 
 /* ---------- Small screens ---------- */
@@ -1368,12 +1367,61 @@ html.lenis body {
         gap: 14px 10px;
     }
 
-    .deco--bow,
-    .deco--star {
+    .deco:nth-child(n+5) {
         display: none;
     }
 
     .footer {
         border-radius: 32px 32px 0 0;
     }
+}
+
+/* ---------- Music toggle ---------- */
+.music-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 95;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font: inherit;
+    font-weight: 700;
+    color: #2A2352;
+    background: #FFD3E8;
+    border: 2px solid #2A2352;
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 #2A2352;
+    cursor: pointer;
+}
+
+.music-btn:hover { transform: translateY(-2px); }
+.music-btn:focus-visible { outline: 3px solid #6FA8F5; outline-offset: 3px; }
+.music-btn.is-on { background: #FFF09A; }
+.music-btn.is-on .music-btn__icon { animation: bob 1s ease-in-out infinite alternate; }
+
+/* ---------- Roaming butterfly ---------- */
+.bfly {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 80;
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.bfly__flap {
+    width: 100%;
+    height: 100%;
+}
+
+.bfly img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    rotate: -45deg; /* sprite is drawn diagonally; point its head straight up */
+    image-rendering: pixelated;
 }

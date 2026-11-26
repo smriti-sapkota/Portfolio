@@ -2,10 +2,12 @@
 // before this module runs, so they are available as globals here.
 import { splitChars } from './js/split.js';
 import { playIntro } from './js/intro.js';
-import { initRibbon } from './js/ribbon.js';
+import './js/scroll_snake.js';
 import { initReveals, playHero } from './js/reveal.js';
 import { initNav } from './js/nav.js';
 import { initDecor } from './js/decor.js';
+import { initMusic } from './js/music.js';
+import { initButterfly } from './js/butterfly.js';
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
@@ -27,21 +29,21 @@ if (hasGsap) {
 
 initNav({ lenis });
 initCopyButtons();
+initMusic();
 
 if (hasGsap && !reduceMotion) {
     initReveals();
     initDecor();
-    initRibbon({ reduced: false });
 
     lenis?.stop();
     playIntro().then(() => {
         lenis?.start();
         playHero();
+        initButterfly();
         ScrollTrigger.refresh();
     });
 } else {
     document.documentElement.classList.remove('is-intro');
-    initRibbon({ reduced: true });
 }
 
 function initCopyButtons() {
