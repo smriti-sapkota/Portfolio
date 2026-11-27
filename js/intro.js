@@ -1,7 +1,5 @@
 import { splitChars } from './split.js';
 
-const SEEN_KEY = 'smriti-intro-seen';
-
 // Name splash: letters pop in, the camera dives into the dot of the "i",
 // the screen floods pink and the overlay wipes up to reveal the page.
 export function playIntro() {
@@ -16,13 +14,12 @@ export function playIntro() {
     const fill = intro.querySelector('.intro__fill');
     const skip = intro.querySelector('.intro__skip');
     const chars = splitChars(word);
-    const short = readSeen();
+    const short = false;
 
     return new Promise((resolve) => {
         const finish = () => {
             intro.remove();
             root.classList.remove('is-intro');
-            writeSeen();
             resolve();
         };
 
@@ -69,18 +66,3 @@ export function playIntro() {
     });
 }
 
-function readSeen() {
-    try {
-        return sessionStorage.getItem(SEEN_KEY) === '1';
-    } catch {
-        return false;
-    }
-}
-
-function writeSeen() {
-    try {
-        sessionStorage.setItem(SEEN_KEY, '1');
-    } catch {
-        // Storage can be blocked; the full intro will simply play again
-    }
-}

@@ -1987,6 +1987,7 @@ html.lenis body {
 
 .college-box .project-feature {
     width: 100%;
+    max-width: none;
 }
 
 .college-box .project-feature__note {
@@ -2258,4 +2259,46 @@ html.lenis body {
 .work-page--wide .photo-strip .polaroid {
     position: relative;
     top: auto;
+}
+
+/* ---------- Unified project thumbnails ----------
+   One cover-photo shape for every project card (current and future): same
+   width (fills the card) and same 21:8 ratio, whatever the source media size. */
+.work-card .window__media,
+.college-box .window__media {
+    width: 100%;
+    aspect-ratio: 21 / 8;
+    min-height: 0;
+    overflow: hidden;
+    background-size: cover, 28px 28px, 28px 28px;
+    background-position: center, 0 0, 0 0;
+    background-repeat: no-repeat, repeat, repeat;
+}
+
+.work-card .window__media :is(video, img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+}
+
+/* Cards always stretch to their column so every thumbnail is the same size */
+.college-box__row {
+    justify-items: stretch;
+}
+
+.college-box__main,
+.college-box .project-feature,
+.college-box .work-card {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Home-page scrolling cards keep their original 16:9 shape */
+.marquee .work-card .window__media {
+    aspect-ratio: 16 / 9;
 }

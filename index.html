@@ -24,7 +24,12 @@
         // Runs before first paint so the intro overlay covers the page without a flash
         document.documentElement.classList.add('js');
         try {
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            // Play on first visit and reloads; skip when arriving from another page of this site (e.g. navbar "Home")
+            var nav = performance.getEntriesByType('navigation')[0];
+            var reloaded = nav && nav.type === 'reload';
+            var internal = !reloaded && document.referrer &&
+                new URL(document.referrer).origin === location.origin;
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !internal) {
                 document.documentElement.classList.add('is-intro');
             }
         } catch (e) {}
