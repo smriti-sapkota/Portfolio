@@ -6,6 +6,7 @@ import './js/scroll_snake.js';
 import { initReveals, playHero } from './js/reveal.js';
 import { initNav } from './js/nav.js';
 import { initDecor } from './js/decor.js';
+import { initMarquee } from './js/marquee.js';
 import { initMusic } from './js/music.js';
 import { initButterfly } from './js/butterfly.js';
 
@@ -27,8 +28,8 @@ if (hasGsap) {
     }
 }
 
+initMarquee({ reduced: reduceMotion });
 initNav({ lenis });
-initCopyButtons();
 initMusic();
 
 if (hasGsap && !reduceMotion) {
@@ -46,17 +47,3 @@ if (hasGsap && !reduceMotion) {
     document.documentElement.classList.remove('is-intro');
 }
 
-function initCopyButtons() {
-    document.querySelectorAll('[data-copy]').forEach((button) => {
-        const status = button.parentElement.querySelector('.copy-status');
-        button.addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(button.dataset.copy);
-                if (status) status.textContent = 'copied! ♡';
-            } catch {
-                if (status) status.textContent = 'press ctrl+c to copy';
-            }
-            setTimeout(() => { if (status) status.textContent = ''; }, 2200);
-        });
-    });
-}

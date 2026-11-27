@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Smriti Sapkota</title>
+    <meta name="description" content="Say hi to Smriti Sapkota: send a message or email sapkotasmriti56@gmail.com.">
+    <meta name="theme-color" content="#FFFBE0">
+    <link rel="canonical" href="https://sapkotasmriti.com.np/contact.html">
+    <link rel="icon" href="fav.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/contact.js"></script>
+    <script type="module" src="js/header-hide.js"></script>
+</head>
+<body>
+    <header class="site-header is-scrolled">
+        <a class="logo" href="index.html" aria-label="Smriti Sapkota, home">
+            <img class="logo__avatar" src="assets/img/Chibi Portrait.png" alt="" aria-hidden="true" width="46" height="46">
+        </a>
+        <nav aria-label="Primary">
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="is-active" aria-current="page" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="work-page work-page--wide">
+        <div class="contact-grid">
+            <div class="card card--big">
+                <h1 class="footer__title" id="contact-title"><span class="sticker-text sticker-text--pink">Let's say hi!</span></h1>
+                <p>Have a project, a question or an opportunity? My inbox is open.</p>
+                <div class="email-row">
+                    <a class="btn btn--pink" href="mailto:sapkotasmriti56@gmail.com">sapkotasmriti56@gmail.com</a>
+                    <button class="btn btn--small copy-btn" type="button" data-copy="sapkotasmriti56@gmail.com">Copy</button>
+                    <span class="copy-status" role="status" aria-live="polite"></span>
+                </div>
+                <form class="message-form" aria-label="Send me a message">
+                    <label class="message-form__label" for="msg-text">Leave me a note</label>
+                    <input class="message-form__input" type="text" name="name" placeholder="your name (optional)" maxlength="60" autocomplete="name">
+                    <textarea class="message-form__input" id="msg-text" name="message" rows="4" placeholder="say sth nice" maxlength="1000" required></textarea>
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+                    <div class="message-form__row">
+                        <button class="btn btn--pink" type="submit">Send →</button>
+                        <span class="message-form__status" role="status" aria-live="polite"></span>
+                    </div>
+                </form>
+            </div>
+            <section class="card dino-game" aria-labelledby="dg-title">
+                <h2 class="footer__title" id="dg-title"><span class="sticker-text sticker-text--blue">Let's play<br>with dino!</span></h2>
+                <p class="dino-game__sub">Mini game: Dino Says</p>
+                <div class="dino-row">
+                    <div data-dino data-directions="assets/img/dino-directions.webp" data-reactions="assets/img/dino-reactions.webp"></div>
+                    <p class="pixel-bubble pixel-bubble--blue">boop me!</p>
+                </div>
+                <p class="dino-game__status" role="status" aria-live="polite"></p>
+                <div class="dino-game__bar" aria-hidden="true"><span></span></div>
+                <div class="dino-game__pad" role="group" aria-label="Direction pad">
+                    <button type="button" data-dir="up-left" aria-label="Look up left">↖</button>
+                    <button type="button" data-dir="up" aria-label="Look up">↑</button>
+                    <button type="button" data-dir="up-right" aria-label="Look up right">↗</button>
+                    <button type="button" data-dir="left" aria-label="Look left">←</button>
+                    <span aria-hidden="true">🦖</span>
+                    <button type="button" data-dir="right" aria-label="Look right">→</button>
+                    <button type="button" data-dir="down-left" aria-label="Look down left">↙</button>
+                    <button type="button" data-dir="down" aria-label="Look down">↓</button>
+                    <button type="button" data-dir="down-right" aria-label="Look down right">↘</button>
+                </div>
+                <button class="btn btn--pink dino-game__start" type="button">Start</button>
+                <p class="dino-game__score"></p>
+            </section>
+        </div>
+
+        <section class="contact-socials-box" aria-labelledby="soc-title">
+            <h2 class="contact-socials-box__title" id="soc-title">Find me elsewhere</h2>
+            <ul class="contact-socials__list">
+            <li><a class="btn btn--small" href="https://github.com/smriti-sapkota" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a class="btn btn--small" href="https://www.linkedin.com/in/smriti-sapkota-6b278036a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a class="btn btn--small" href="https://www.instagram.com/sapkotasmriti56/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a class="btn btn--small" href="mailto:sapkotasmriti56@gmail.com">Email</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

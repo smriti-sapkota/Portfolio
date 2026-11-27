@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGuard — Web Vulnerability Scanner | Smriti Sapkota</title>
+    <meta name="description" content="A web vulnerability scanner built as a team project for my BSc CSIT final year. I wrote the FastAPI backend that performs the scanning; teammates built the React interface.">
+    <meta name="theme-color" content="#FFFBE0">
+    <link rel="icon" href="../fav.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../js/header-hide.js"></script>
+</head>
+<body>
+    <header class="site-header is-scrolled">
+        <a class="logo" href="../index.html" aria-label="Smriti Sapkota, home">
+            <img class="logo__avatar" src="../assets/img/Chibi Portrait.png" alt="" aria-hidden="true" width="46" height="46">
+        </a>
+        <nav aria-label="Primary">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">← Projects</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="work-page">
+        <p class="pixel-bubble pixel-bubble--blue">College project · 7th semester</p>
+        <h1 class="work-page__title">WebGuard — Web Vulnerability Scanner</h1>
+        <p class="meta"><span>Academic</span><span>Team project</span><span>7th semester</span></p>
+        <p class="work-page__intro">A web vulnerability scanner built as a team project for my BSc CSIT final year. I wrote the FastAPI backend that performs the scanning; teammates built the React interface.</p>
+
+        <article class="window window--blue work-page__video">
+            <div class="window__bar"><span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="window__name">webguard</span></div>
+            <video controls poster="../assets/coverpage/webguardcover.png" preload="metadata" playsinline>
+                <source src="../assets/video/webguard.mp4" type="video/mp4">
+                Your browser can't play this video.
+            </video>
+        </article>
+
+        <section class="work-page__did" aria-labelledby="did-title">
+            <h2 id="did-title">What I did</h2>
+            <ul class="ticks">
+                <li>Multi-threaded crawler mapping up to 50 same-domain pages per scan.</li>
+                <li>Reflected XSS and SQL injection tests on forms and URL parameters.</li>
+                <li>CSRF checks, missing X-Frame-Options and CSP header detection.</li>
+                <li>PostgreSQL storage with SQLModel, Docker Compose, and Azure App Service deployment.</li>
+            </ul>
+            <ul class="tags" aria-label="Tech used"><li>Python</li><li>FastAPI</li><li>SQLModel</li><li>PostgreSQL</li><li>Docker</li></ul>
+            <a class="btn btn--small btn--pink" href="https://webguard.sapkotasmriti.com.np" target="_blank" rel="noopener noreferrer">Visit live site →</a>
+            <a class="btn btn--small" href="https://github.com/smriti-sapkota/WebGuard" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </section>
+
+        <a class="btn" href="../projects.html">← Back to projects</a>
+    </main>
+</body>
+</html>

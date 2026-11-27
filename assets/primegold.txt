@@ -1,0 +1,20 @@
+Based on your authored commit history, your strongest portfolio story is that you contributed to PrimeGold, a multi-tenant gold-shop management platform, mainly by building and improving customer-facing workflows and admin tools. Your work spans a Next.js, React, and TypeScript frontend and selected Django backend/API changes.
+
+Contributions you can list
+Built sales and customer workflows: Added customer selection and management, and contributed to the sales and order process—from choosing products and creating orders through invoices, payment, and history views.
+Improved jewellery inventory entry: Created a guided “Easy Mode” for adding jewellery, with draft support to make product entry simpler.
+Expanded purchasing and supplier features: Added supplier and bank support to purchase forms, seller and bank selection, purchase history, invoice downloads, and debit-note workflows.
+Enhanced goldsmith job management: Improved sales-order selection with search and state handling for goldsmith jobs.
+Added finance-page search and filtering: Made withdrawals and opening-balance records easier to find.
+Built staff and platform administration screens: Contributed staff profiles, role filtering, permissions and password-management interfaces, as well as a redesigned superuser login and responsive admin console.
+Improved shared application foundations: Worked on API/session handling, stock-alert data fetching, contact-image uploads, error recovery, and refactoring shared UI and page code.
+Portfolio-ready summary
+Software Developer — PrimeGold
+Contributed to a multi-tenant jewellery business management platform built with Next.js, React, TypeScript, and Django. Developed and enhanced sales, customer, purchasing, inventory, and goldsmith workflows; built staff and platform-administration interfaces; and improved API integration, error handling, and shared frontend components.
+
+For a résumé, you could use:
+
+Built end-to-end sales, customer, and order-management interfaces, including product selection, invoices, and payment-related flows.
+Developed purchasing features for supplier and bank selection, purchase history, invoice downloads, and debit notes.
+Created guided jewellery-entry and goldsmith-job workflows, and added search/filtering to finance screens.
+Implemented staff-management and platform-admin experiences, and improved shared API, session, and error-handling patterns.
